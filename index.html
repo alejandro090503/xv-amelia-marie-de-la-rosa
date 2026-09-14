@@ -712,6 +712,16 @@ body.gift-locked{overflow:hidden;overscroll-behavior:none}
 .sec:has(> .sec-bg) .heading,.sec:has(> .sec-bg) .heading-sm,.portrait-section .portrait-name,
 .sec:has(> .sec-bg) p,.sec:has(> .sec-bg) .itin-time,.sec:has(> .sec-bg) .itin-ev,.sec:has(> .sec-bg) .dc-swatch-name{text-shadow:0 2px 12px rgba(4,9,26,.75)}
 .sec:has(> .sec-bg) .eyebrow,.portrait-section .eyebrow,.portrait-section .portrait-tag,.sec:has(> .sec-bg) .sub{filter:drop-shadow(0 1px 3px rgba(4,9,26,.9))}
+
+/* ═══════ AMELIA · movimiento ondulante del hero (kenBurns) en todos los fondos con asset ═══════ */
+.sec-bg,.portrait-section::after,#rsvp::before{animation:kenBurns 24s ease-in-out infinite;will-change:transform;transform-origin:center}
+.sec-bg[style*="fondo-gracia"]{animation-duration:22s;animation-delay:-4s}
+.sec-bg[style*="textura-1"]{animation-duration:26s;animation-delay:-11s}
+.sec-bg[style*="textura-2"]{animation-duration:23s;animation-delay:-7s}
+.sec-bg[style*="textura-3"]{animation-duration:27s;animation-delay:-15s}
+.portrait-section::after{animation-duration:25s;animation-delay:-9s}
+#rsvp::before{animation-duration:28s;animation-delay:-18s}
+@media(prefers-reduced-motion:reduce){.sec-bg,.portrait-section::after,#rsvp::before{animation:none!important}}
 </style>
 </head>
 <body>
