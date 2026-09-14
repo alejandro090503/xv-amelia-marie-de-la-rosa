@@ -676,6 +676,42 @@ body.gift-locked{overflow:hidden;overscroll-behavior:none}
 .gr-acc-n{font-size:13px}
 .qr-scan-lbl{font-size:13px}
 @media(prefers-reduced-motion:reduce){.eyebrow,.loc-venue-lbl,.portrait-tag,.cd-lbl,.fam-role-lbl{animation:none}}
+
+/* ═══════ AMELIA · degradado vivo con celeste en secciones de fondo liso ═══════ */
+.has-aurora{position:relative;isolation:isolate;overflow:hidden}
+.aurora{position:absolute!important;inset:0;z-index:-1!important;overflow:hidden;pointer-events:none;background:#0A1330}
+.aurora i{position:absolute;display:block;will-change:transform}
+.au-base{top:0;bottom:0;left:0;width:300%;
+  background:linear-gradient(100deg,#0A1330 0%,#1E3A8A 12%,#2A7FB0 24%,#0F1C45 36%,#4A7BB7 48%,#1E3A8A 58%,#3A9CC8 70%,#152B66 82%,#0A1330 100%);
+  animation:auBase 28s ease-in-out infinite alternate}
+@keyframes auBase{from{transform:translate3d(0,0,0)}to{transform:translate3d(-66.666%,0,0)}}
+.au-b1{top:-14%;left:-34%;width:110%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(147,227,253,.78) 0%,rgba(147,227,253,.34) 36%,rgba(147,227,253,0) 68%);
+  animation:auB1 17s ease-in-out infinite}
+.au-b2{bottom:-16%;right:-36%;width:115%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(147,227,253,.66) 0%,rgba(74,123,183,.34) 42%,rgba(74,123,183,0) 70%);
+  animation:auB2 21s ease-in-out infinite}
+.au-b3{top:30%;right:-30%;width:80%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(244,164,192,.36) 0%,rgba(183,110,121,.16) 45%,rgba(183,110,121,0) 70%);
+  animation:auB3 24s ease-in-out infinite}
+.au-b4{top:52%;left:-38%;width:90%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(147,227,253,.5) 0%,rgba(147,227,253,.18) 42%,rgba(147,227,253,0) 70%);
+  animation:auB4 19s ease-in-out infinite}
+@keyframes auB1{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(22%,10%,0) scale(1.18)}}
+@keyframes auB2{0%,100%{transform:translate3d(0,0,0) scale(1.05)}50%{transform:translate3d(-24%,-12%,0) scale(.9)}}
+@keyframes auB3{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(-40%,18%,0) scale(1.2)}}
+@keyframes auB4{0%,100%{transform:translate3d(0,0,0) scale(.95)}50%{transform:translate3d(30%,-14%,0) scale(1.15)}}
+/* velo al centro: el texto siempre queda sobre tono oscuro */
+.aurora::after{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 62% 48% at 50% 50%,rgba(6,12,34,.5) 0%,rgba(6,12,34,.22) 60%,rgba(6,12,34,0) 100%)}
+#galeria .aurora::after{background:linear-gradient(180deg,rgba(6,12,34,.35),rgba(6,12,34,.12) 40%,rgba(6,12,34,.3))}
+.has-aurora .heading,.has-aurora .heading-sm,.has-aurora .gift-msg,.has-aurora .gal-quote,.has-aurora .cd-baby-cap,.has-aurora .alice-quote,.has-aurora .footer-date{text-shadow:0 2px 12px rgba(4,9,26,.7)}
+.has-aurora .eyebrow,.has-aurora .sub,.has-aurora .giftbox-cta,.has-aurora .env-tap-hint,.has-aurora .gal-hint,.has-aurora .qr-scan-lbl,.has-aurora .qr-note{filter:drop-shadow(0 1px 3px rgba(4,9,26,.85))}
+@media(prefers-reduced-motion:reduce){.aurora i{animation:none!important}}
+
+.sec:has(> .sec-bg) .heading,.sec:has(> .sec-bg) .heading-sm,.portrait-section .portrait-name,
+.sec:has(> .sec-bg) p,.sec:has(> .sec-bg) .itin-time,.sec:has(> .sec-bg) .itin-ev,.sec:has(> .sec-bg) .dc-swatch-name{text-shadow:0 2px 12px rgba(4,9,26,.75)}
+.sec:has(> .sec-bg) .eyebrow,.portrait-section .eyebrow,.portrait-section .portrait-tag,.sec:has(> .sec-bg) .sub{filter:drop-shadow(0 1px 3px rgba(4,9,26,.9))}
 </style>
 </head>
 <body>
@@ -724,7 +760,7 @@ body.gift-locked{overflow:hidden;overscroll-behavior:none}
 
   <!-- INVITACIÓN -->
   <section class="sec rv" style="text-align:center;overflow:hidden">
-    <div class="sec-bg" style="background-image:url('fondo-gracia.jpg');opacity:.30"></div>
+    <div class="sec-bg" style="background-image:url('fondo-gracia.jpg');opacity:.52"></div>
     <span class="eyebrow stagger-child">Con la gracia de Dios</span>
     <div class="orn stagger-child"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
     <h1 class="heading stagger-child">Amelia Marie<br>De la Rosa</h1>
@@ -740,7 +776,7 @@ body.gift-locked{overflow:hidden;overscroll-behavior:none}
   <!-- LA FESTEJADA · RETRATO -->
   <style>
   .portrait-section{text-align:center;padding:clamp(60px,9vh,92px) 26px;position:relative;overflow:hidden;background:#0A1330}
-  .portrait-section::after{content:'';position:absolute;inset:0;background:url('textura-4.jpg') center/cover no-repeat;opacity:.26;pointer-events:none;z-index:0}
+  .portrait-section::after{content:'';position:absolute;inset:0;background:url('textura-4.jpg') center/cover no-repeat;opacity:.46;pointer-events:none;z-index:0}
   .portrait-section > *{position:relative;z-index:1}
   .portrait-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 72% 52% at 50% 44%,rgba(147,227,253,.22) 0%,rgba(147,227,253,0) 70%);pointer-events:none}
   .portrait-tiara{display:block;margin:0 auto 12px;width:64px;height:auto;filter:drop-shadow(0 2px 6px rgba(201,138,147,.28))}
@@ -795,7 +831,8 @@ body.gift-locked{overflow:hidden;overscroll-behavior:none}
   .cd-baby-img{width:152px;height:152px;border-radius:50%;object-fit:cover;object-position:center 32%;border:3px solid rgba(201,138,147,.6);box-shadow:0 10px 30px rgba(0,0,0,.55),inset 0 0 0 2px rgba(244,211,206,.25);display:block}
   .cd-baby-cap{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:18px;color:var(--gold-light);margin-top:16px;line-height:1.6;text-align:center;opacity:.95}
   </style>
-  <section class="sec-sm rv" style="text-align:center;background:var(--surface)">
+  <section class="sec-sm rv has-aurora" style="text-align:center;background:var(--surface)">
+    <div class="aurora" aria-hidden="true"><i class="au-base"></i><i class="au-b1"></i><i class="au-b2"></i><i class="au-b3"></i><i class="au-b4"></i></div>
     <div class="cd-baby-wrap rv">
       <div class="cd-baby-frame">
         <div class="cd-baby-ring"></div>
@@ -836,7 +873,7 @@ body.gift-locked{overflow:hidden;overscroll-behavior:none}
 
   
   <section class="sec rv" style="text-align:center;overflow:hidden">
-    <div class="sec-bg" style="background-image:url('textura-1.jpg');opacity:.32"></div>
+    <div class="sec-bg" style="background-image:url('textura-1.jpg');opacity:.5"></div>
     <span class="eyebrow">Con la bendición de</span>
     <h2 class="heading-sm">Mi Familia</h2>
     <div class="fam-rings rv">
@@ -874,7 +911,8 @@ body.gift-locked{overflow:hidden;overscroll-behavior:none}
   </section>
 
   <!-- UBICACIÓN -->
-  <section class="sec rv" style="text-align:center;background:var(--surface)">
+  <section class="sec rv has-aurora" style="text-align:center;background:var(--surface)">
+    <div class="aurora" aria-hidden="true"><i class="au-base"></i><i class="au-b1"></i><i class="au-b2"></i><i class="au-b3"></i><i class="au-b4"></i></div>
     <div class="loc-pin rv">
       <svg class="alice-key" viewBox="0 0 34 46" width="34" height="46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <circle cx="17" cy="11" r="8.4" fill="rgba(201,138,147,.10)" stroke="#C98A93" stroke-width="1.5"/>
@@ -953,7 +991,7 @@ body.gift-locked{overflow:hidden;overscroll-behavior:none}
 
   
   <section class="sec rv" style="text-align:center;overflow:hidden">
-    <div class="sec-bg" style="background-image:url('textura-2.jpg');opacity:.30"></div>
+    <div class="sec-bg" style="background-image:url('textura-2.jpg');opacity:.6"></div>
     <span class="eyebrow stagger-child">El Programa del Día</span>
     <h2 class="heading-sm stagger-child">Itinerario</h2>
     <div class="orn stagger-child" style="margin-top:16px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
@@ -964,8 +1002,8 @@ body.gift-locked{overflow:hidden;overscroll-behavior:none}
   </section>
 
   <!-- DRESS CODE -->
-  <section class="sec rv" style="text-align:center;background:var(--surface);overflow:hidden">
-    <div class="sec-bg" style="background-image:url('textura-3.jpg');opacity:.26"></div>
+  <section class="sec rv" style="text-align:center;background:var(--surface);overflow:hidden;isolation:isolate">
+    <div class="sec-bg" style="background-image:url('textura-3.jpg');opacity:.42"></div>
     <span class="eyebrow">Código de Vestimenta</span>
     <h2 class="heading-sm">Formal</h2>
     <div class="orn" style="margin-top:16px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
@@ -1014,7 +1052,8 @@ body.gift-locked{overflow:hidden;overscroll-behavior:none}
   </section>
 
   <!-- NUESTRA HISTORIA -->
-  <section id="galeria">
+  <section id="galeria" class="has-aurora">
+    <div class="aurora" aria-hidden="true"><i class="au-base"></i><i class="au-b1"></i><i class="au-b2"></i><i class="au-b3"></i><i class="au-b4"></i></div>
     <span class="eyebrow">Mis Recuerdos</span>
     <h2 class="heading-sm">Galería</h2>
     <div class="orn" style="margin-top:16px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
@@ -1065,7 +1104,8 @@ body.gift-locked{overflow:hidden;overscroll-behavior:none}
   </section>
 
   <!-- MESA DE REGALOS -->
-  <section id="regalos" class="sec rv" style="text-align:center">
+  <section id="regalos" class="sec rv has-aurora" style="text-align:center">
+    <div class="aurora" aria-hidden="true"><i class="au-base"></i><i class="au-b1"></i><i class="au-b2"></i><i class="au-b3"></i><i class="au-b4"></i></div>
     <span class="eyebrow" style="color:var(--gold-light);opacity:.85">Un Detalle de Cariño</span>
     <h2 class="heading-sm" style="color:var(--gold-light)">Mesa de Regalos</h2>
     <div class="orn" style="margin-top:14px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
@@ -1198,7 +1238,8 @@ body.gift-locked{overflow:hidden;overscroll-behavior:none}
   </section>
 
   <!-- LLUVIA DE SOBRES -->
-  <section id="sobres" class="sec rv" style="text-align:center">
+  <section id="sobres" class="sec rv has-aurora" style="text-align:center">
+    <div class="aurora" aria-hidden="true"><i class="au-base"></i><i class="au-b1"></i><i class="au-b2"></i><i class="au-b3"></i><i class="au-b4"></i></div>
     <div class="env-rain" id="envRain" aria-hidden="true"></div>
     <div class="env-stage">
       <span class="eyebrow">Celebra Conmigo</span>
@@ -1265,7 +1306,8 @@ body.gift-locked{overflow:hidden;overscroll-behavior:none}
   </section>
 
   <!-- ÁLBUM COMPARTIDO -->
-  <section id="album" class="sec rv" style="text-align:center">
+  <section id="album" class="sec rv has-aurora" style="text-align:center">
+    <div class="aurora" aria-hidden="true"><i class="au-base"></i><i class="au-b1"></i><i class="au-b2"></i><i class="au-b3"></i><i class="au-b4"></i></div>
     <span class="eyebrow" style="color:var(--gold-light);opacity:.85">Comparte el Momento</span>
     <h2 class="heading-sm" style="color:var(--gold-light)">Álbum Compartido</h2>
     <div class="orn" style="margin-top:14px;margin-bottom:0"><div class="orn-line" style="background:linear-gradient(to right,transparent,rgba(201,138,147,.4),transparent)"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line" style="background:linear-gradient(to right,transparent,rgba(201,138,147,.4),transparent)"></div></div>
@@ -1312,7 +1354,8 @@ body.gift-locked{overflow:hidden;overscroll-behavior:none}
   .rsvp-input{min-height:52px}
   .rsvp-feedback{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:16px;line-height:1.5;color:var(--gold);margin-top:16px;min-height:20px}
   </style>
-  <section id="rsvp" class="sec rv" style="text-align:center;background:var(--surface)">
+  <section id="rsvp" class="sec rv has-aurora" style="text-align:center;background:var(--surface)">
+    <div class="aurora" aria-hidden="true"><i class="au-base"></i><i class="au-b1"></i><i class="au-b2"></i><i class="au-b3"></i><i class="au-b4"></i></div>
     <div class="rsvp-card rv">
       <svg class="rsvp-corner rsvp-corner--tl" viewBox="0 0 52 52" fill="none" aria-hidden="true"><path d="M2 50 L2 2 L50 2" stroke="var(--gold)" stroke-width=".9" opacity=".6"/><circle cx="2" cy="2" r="2.5" fill="var(--gold)" opacity=".5"/></svg>
       <svg class="rsvp-corner rsvp-corner--tr" viewBox="0 0 52 52" fill="none" aria-hidden="true"><path d="M2 50 L2 2 L50 2" stroke="var(--gold)" stroke-width=".9" opacity=".6"/><circle cx="2" cy="2" r="2.5" fill="var(--gold)" opacity=".5"/></svg>
@@ -1372,7 +1415,8 @@ body.gift-locked{overflow:hidden;overscroll-behavior:none}
   </section>
 
   <!-- FOOTER -->
-  <footer id="footer">
+  <footer id="footer" class="has-aurora">
+    <div class="aurora" aria-hidden="true"><i class="au-base"></i><i class="au-b1"></i><i class="au-b2"></i><i class="au-b3"></i><i class="au-b4"></i></div>
     <!-- Monograma I -->
     <div class="footer-monogram-wrap rv">
       <div class="footer-initials">
