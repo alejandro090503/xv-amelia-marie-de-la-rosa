@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
 <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover">
 <title>Amelia Marie De la Rosa · Mis XV Años · 14·XI·MMXXVI</title>
 <meta name="description" content="Amelia Marie De la Rosa te invita a celebrar sus XV años. Bronx, Nueva York — sábado 14 de noviembre de 2026.">
@@ -713,14 +714,14 @@ body.gift-locked{overflow:hidden;overscroll-behavior:none}
     radial-gradient(ellipse 85% 40% at 50% 16%,rgba(6,12,34,.8) 0%,rgba(6,12,34,.3) 70%,rgba(6,12,34,0) 100%),
     linear-gradient(180deg,rgba(6,12,34,.55),rgba(6,12,34,.18) 42%,rgba(6,12,34,.45))}
 .has-aurora .heading,.has-aurora .heading-sm,.has-aurora .gift-msg,.has-aurora .gal-quote,.has-aurora .cd-baby-cap,.has-aurora .alice-quote,.has-aurora .footer-date{text-shadow:0 2px 12px rgba(4,9,26,.7)}
-.has-aurora .eyebrow,.has-aurora .sub,.has-aurora .giftbox-cta,.has-aurora .env-tap-hint,.has-aurora .gal-hint,.has-aurora .qr-scan-lbl,.has-aurora .qr-note{filter:drop-shadow(0 1px 3px rgba(4,9,26,.85))}
+.has-aurora .sub,.has-aurora .giftbox-cta,.has-aurora .env-tap-hint,.has-aurora .gal-hint,.has-aurora .qr-scan-lbl,.has-aurora .qr-note{text-shadow:0 1px 6px rgba(4,9,26,.9)}
 @media(prefers-reduced-motion:reduce){.aurora i{animation:none!important}}
 
 .sec:has(> .sec-bg) .heading,.sec:has(> .sec-bg) .heading-sm,.portrait-section .portrait-name,
 .sec:has(> .sec-bg) p,.sec:has(> .sec-bg) .itin-time,.sec:has(> .sec-bg) .itin-ev,.sec:has(> .sec-bg) .dc-swatch-name{text-shadow:0 2px 12px rgba(4,9,26,.75)}
 .sec:has(> .sec-bg)::after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
   background:radial-gradient(ellipse 84% 70% at 50% 46%,rgba(6,12,34,.8) 0%,rgba(6,12,34,.5) 58%,rgba(6,12,34,.12) 92%,rgba(6,12,34,0) 100%)}
-.sec:has(> .sec-bg) .eyebrow,.portrait-section .eyebrow,.portrait-section .portrait-tag,.sec:has(> .sec-bg) .sub{filter:drop-shadow(0 1px 3px rgba(4,9,26,.9))}
+.portrait-section .portrait-tag,.sec:has(> .sec-bg) .sub{text-shadow:0 1px 6px rgba(4,9,26,.9)}
 
 /* ═══════ AMELIA · movimiento ondulante del hero (kenBurns) en todos los fondos con asset ═══════ */
 .sec-bg,.portrait-section::after,#rsvp::before{animation:kenBurns 24s ease-in-out infinite;will-change:transform;transform-origin:center}
@@ -899,16 +900,55 @@ body.lb-locked{overflow:hidden}
   background:rgba(147,227,253,.10);color:#FFFFFF;font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;
   letter-spacing:.02em;transition:transform .25s,background .25s,border-color .25s}
 .lang-btn:hover{transform:translateY(-2px);background:rgba(147,227,253,.2);border-color:#F4D3CE}
+.lang-btn.is-last{border-color:#F4D3CE;background:rgba(147,227,253,.18)}
 .lang-btn small{font-family:'Italiana',serif;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:#F4D3CE}
 .lang-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15.5px;color:#DDE8F6;opacity:.9;text-align:center;max-width:300px}
 #lang-toggle{position:fixed;top:14px;right:14px;z-index:997;display:none;align-items:center;gap:0;padding:4px;
-  border-radius:50px;border:1px solid rgba(244,211,206,.5);background:rgba(10,19,48,.82);
-  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);box-shadow:0 6px 16px rgba(0,0,0,.4)}
+  border-radius:50px;border:1px solid rgba(244,211,206,.5);background:rgba(10,19,48,.94);box-shadow:0 6px 16px rgba(0,0,0,.4)}
 #lang-toggle.is-ready{display:flex}
 .lang-opt{min-width:46px;min-height:38px;padding:0 12px;border:none;border-radius:50px;background:transparent;cursor:pointer;
   font-family:'Italiana',serif;font-size:13px;letter-spacing:.14em;color:#F4D3CE;-webkit-appearance:none;appearance:none}
 .lang-opt.is-on{background:linear-gradient(135deg,#F6D8D2,#C98A93 55%,#8E4E5A);color:#0A1330}
 @media(prefers-reduced-motion:reduce){.lang-key{animation:none}}
+
+/* ═══════ AMELIA · rendimiento iOS (Safari se reiniciaba por memoria de capas) ═══════ */
+.au-base{width:100%!important;animation:none!important;transform:none!important}
+.aurora i{will-change:auto!important}
+.au-b3,.au-b4{display:none!important}
+/* sin animación = sin capa compuesta; solo la sección visible anima */
+.au-b1,.au-b2{animation:none!important}
+.is-live .au-b1{animation:auB1 17s ease-in-out infinite!important}
+.is-live .au-b2{animation:auB2 21s ease-in-out infinite!important}
+.sec-bg,.portrait-section::after{will-change:auto!important;animation:none!important}
+.sec.is-live > .sec-bg{animation:kenBurns 24s ease-in-out infinite!important}
+.sec.is-live > .sec-bg[style*="fondo-gracia"]{animation-duration:22s!important;animation-delay:-4s!important}
+.sec.is-live > .sec-bg[style*="textura-1"]{animation-duration:26s!important;animation-delay:-11s!important}
+.sec.is-live > .sec-bg[style*="textura-2"]{animation-duration:23s!important;animation-delay:-7s!important}
+.sec.is-live > .sec-bg[style*="textura-3"]{animation-duration:27s!important;animation-delay:-15s!important}
+.portrait-section.is-live::after{animation:kenBurns 25s ease-in-out infinite -9s!important}
+#rsvp::before{animation:none!important}
+.eyebrow,.loc-venue-lbl,.portrait-tag,.cd-lbl,.fam-role-lbl{animation:none!important}
+.rsvp-card{-webkit-backdrop-filter:none!important;backdrop-filter:none!important;background:rgba(15,28,69,.95)!important}
+.lb{-webkit-backdrop-filter:none!important;backdrop-filter:none!important;background:rgba(4,9,26,.97)!important}
+.fan-card{will-change:auto!important}
+.footer-photo img{will-change:auto!important}
+.footer-photo-shine{animation:none!important}
+.is-live .footer-photo-shine{animation:footShine 11s ease-in-out infinite 2s!important}
+
+/* el modal de regalos (del template) era una capa fija con blur SIEMPRE activa:
+   todo lo que pasaba por debajo al hacer scroll se volvía capa → memoria disparada */
+.gift-backdrop{-webkit-transform:none!important;transform:none!important;
+  -webkit-backdrop-filter:none!important;backdrop-filter:none!important;
+  visibility:hidden;transition:opacity .45s ease,visibility 0s linear .45s!important}
+.gift-backdrop.is-open{visibility:visible;transition:opacity .45s ease,visibility 0s!important;
+  -webkit-backdrop-filter:blur(14px)!important;backdrop-filter:blur(14px)!important}
+/* ═══════ iOS convierte teléfonos y correos en enlaces azules: se neutraliza ═══════ */
+a[x-apple-data-detectors],.gr-acc-c a,.gr-acc-c a:link,.gr-acc-c a:visited{
+  color:#FFFFFF!important;-webkit-text-fill-color:#FFFFFF!important;text-decoration:none!important;
+  font-size:inherit!important;font-family:inherit!important;font-weight:inherit!important;line-height:inherit!important}
+
+/* ═══════ visor: la foto se ve completa, con su proporción original ═══════ */
+.lb-fig img{width:auto;height:auto;max-width:100%;max-height:76vh;object-fit:contain}
 </style>
 </head>
 <body>
@@ -1347,7 +1387,7 @@ body.lb-locked{overflow:hidden}
     <div class="orn" style="margin-top:16px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
     <p class="gal-quote rv" data-en="Every photo, a moment of this dream come true.">Cada foto, un instante de este sueño hecho realidad.</p>
     <div class="fan-stage rv" id="fanStage">
-      <div class="fan-card" data-full="foto1.jpg" data-cap="Amelia con su vestido azul junto al lago" data-cap-en="Amelia in her blue gown by the lake">
+      <div class="fan-card" data-full="full-1.jpg" data-cap="Amelia con su vestido azul junto al lago" data-cap-en="Amelia in her blue gown by the lake">
         <div class="fan-inner">
           <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
           <div class="fan-side fan-face">
@@ -1357,7 +1397,7 @@ body.lb-locked{overflow:hidden}
           </div>
         </div>
       </div>
-      <div class="fan-card is-negra" data-full="foto2.jpg" data-cap="Amelia entre las flores del jardín" data-cap-en="Amelia among the garden flowers">
+      <div class="fan-card is-negra" data-full="full-2.jpg" data-cap="Amelia entre las flores del jardín" data-cap-en="Amelia among the garden flowers">
         <div class="fan-inner">
           <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
           <div class="fan-side fan-face">
@@ -1367,7 +1407,7 @@ body.lb-locked{overflow:hidden}
           </div>
         </div>
       </div>
-      <div class="fan-card" data-full="foto3.jpg" data-cap="Retrato de Amelia con el moño de Alicia" data-cap-en="Portrait of Amelia with her Alice bow">
+      <div class="fan-card" data-full="full-3.jpg" data-cap="Retrato de Amelia con el moño de Alicia" data-cap-en="Portrait of Amelia with her Alice bow">
         <div class="fan-inner">
           <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
           <div class="fan-side fan-face">
@@ -1377,7 +1417,7 @@ body.lb-locked{overflow:hidden}
           </div>
         </div>
       </div>
-      <div class="fan-card is-negra" data-full="foto4.jpg" data-cap="Amelia junto al Conejo Blanco" data-cap-en="Amelia beside the White Rabbit">
+      <div class="fan-card is-negra" data-full="full-4.jpg" data-cap="Amelia junto al Conejo Blanco" data-cap-en="Amelia beside the White Rabbit">
         <div class="fan-inner">
           <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
           <div class="fan-side fan-face">
@@ -1387,7 +1427,7 @@ body.lb-locked{overflow:hidden}
           </div>
         </div>
       </div>
-      <div class="fan-card" data-full="foto5.jpg" data-cap="Amelia bajo las columnas del jardín" data-cap-en="Amelia under the garden columns">
+      <div class="fan-card" data-full="full-5.jpg" data-cap="Amelia bajo las columnas del jardín" data-cap-en="Amelia under the garden columns">
         <div class="fan-inner">
           <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
           <div class="fan-side fan-face">
@@ -1397,7 +1437,7 @@ body.lb-locked{overflow:hidden}
           </div>
         </div>
       </div>
-      <div class="fan-card is-negra" data-full="foto6.jpg" data-cap="Amelia con el letrero «It’s always tea time»" data-cap-en="Amelia holding the «It’s always tea time» sign">
+      <div class="fan-card is-negra" data-full="full-6.jpg" data-cap="Amelia con el letrero «It’s always tea time»" data-cap-en="Amelia holding the «It’s always tea time» sign">
         <div class="fan-inner">
           <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
           <div class="fan-side fan-face">
@@ -1407,7 +1447,7 @@ body.lb-locked{overflow:hidden}
           </div>
         </div>
       </div>
-      <div class="fan-card" data-full="foto7.jpg" data-cap="Amelia frente al espejo, junto al lago y el cisne" data-cap-en="Amelia at the mirror, by the lake and the swan">
+      <div class="fan-card" data-full="full-7.jpg" data-cap="Amelia frente al espejo, junto al lago y el cisne" data-cap-en="Amelia at the mirror, by the lake and the swan">
         <div class="fan-inner">
           <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
           <div class="fan-side fan-face">
@@ -1417,7 +1457,7 @@ body.lb-locked{overflow:hidden}
           </div>
         </div>
       </div>
-      <div class="fan-card is-negra" data-full="foto8.jpg" data-cap="Amelia al atardecer junto al río" data-cap-en="Amelia at sunset by the river">
+      <div class="fan-card is-negra" data-full="full-8.jpg" data-cap="Amelia al atardecer junto al río" data-cap-en="Amelia at sunset by the river">
         <div class="fan-inner">
           <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
           <div class="fan-side fan-face">
@@ -1427,33 +1467,23 @@ body.lb-locked{overflow:hidden}
           </div>
         </div>
       </div>
-      <div class="fan-card" data-full="foto9.jpg" data-cap="Retrato de Amelia con su vestido de Alicia" data-cap-en="Portrait of Amelia in her Alice dress">
+      <div class="fan-card" data-full="full-10.jpg" data-cap="Amelia junto a la cascada" data-cap-en="Amelia by the waterfall">
         <div class="fan-inner">
           <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
           <div class="fan-side fan-face">
             <span class="fan-corner"><span class="fan-rank">6</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
-            <div class="fan-photo"><img src="foto9.jpg" alt="Retrato de Amelia con su vestido de Alicia" data-en-alt="Portrait of Amelia in her Alice dress" loading="lazy"></div>
+            <div class="fan-photo"><img src="foto10.jpg" alt="Amelia junto a la cascada" data-en-alt="Amelia by the waterfall" loading="lazy"></div>
             <span class="fan-corner br"><span class="fan-rank">6</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
           </div>
         </div>
       </div>
-      <div class="fan-card is-negra" data-full="foto10.jpg" data-cap="Amelia junto a la cascada" data-cap-en="Amelia by the waterfall">
+      <div class="fan-card is-negra" data-full="full-11.jpg" data-cap="Amelia con su vestido azul en el jardín" data-cap-en="Amelia in her blue gown in the garden">
         <div class="fan-inner">
           <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
           <div class="fan-side fan-face">
             <span class="fan-corner"><span class="fan-rank">5</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6S2.4 9.7 2.4 15.3c0 3.1 2.4 4.8 4.6 4.4 1.1-.2 2-.8 2.6-1.6L8.2 22.4h7.6l-1.4-4.3c.6.8 1.5 1.4 2.6 1.6 2.2.4 4.6-1.3 4.6-4.4C21.6 9.7 12 1.6 12 1.6z"/></svg></span>
-            <div class="fan-photo"><img src="foto10.jpg" alt="Amelia junto a la cascada" data-en-alt="Amelia by the waterfall" loading="lazy"></div>
-            <span class="fan-corner br"><span class="fan-rank">5</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6S2.4 9.7 2.4 15.3c0 3.1 2.4 4.8 4.6 4.4 1.1-.2 2-.8 2.6-1.6L8.2 22.4h7.6l-1.4-4.3c.6.8 1.5 1.4 2.6 1.6 2.2.4 4.6-1.3 4.6-4.4C21.6 9.7 12 1.6 12 1.6z"/></svg></span>
-          </div>
-        </div>
-      </div>
-      <div class="fan-card" data-full="foto11.jpg" data-cap="Amelia con su vestido azul en el jardín" data-cap-en="Amelia in her blue gown in the garden">
-        <div class="fan-inner">
-          <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
-          <div class="fan-side fan-face">
-            <span class="fan-corner"><span class="fan-rank">4</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
             <div class="fan-photo"><img src="foto11.jpg" alt="Amelia con su vestido azul en el jardín" data-en-alt="Amelia in her blue gown in the garden" loading="lazy"></div>
-            <span class="fan-corner br"><span class="fan-rank">4</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
+            <span class="fan-corner br"><span class="fan-rank">5</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6S2.4 9.7 2.4 15.3c0 3.1 2.4 4.8 4.6 4.4 1.1-.2 2-.8 2.6-1.6L8.2 22.4h7.6l-1.4-4.3c.6.8 1.5 1.4 2.6 1.6 2.2.4 4.6-1.3 4.6-4.4C21.6 9.7 12 1.6 12 1.6z"/></svg></span>
           </div>
         </div>
       </div>
@@ -2784,7 +2814,6 @@ function initMain(){
   if(reduce) return;
   gsap.fromTo(im,{yPercent:-7},{yPercent:7,ease:'none',
     scrollTrigger:{trigger:fig,start:'top bottom',end:'bottom top',scrub:.6}});
-  gsap.to(im,{scale:1.24,duration:14,ease:'sine.inOut',repeat:-1,yoyo:true});
 })();
 
 /* ── A11Y · sobre operable con teclado + etiquetas del RSVP ── */
@@ -2887,8 +2916,28 @@ window.T = function(es, en){ return document.documentElement.lang === 'en' ? en 
       (function(btn){ btn.addEventListener('click', function(){ applyLang(btn.getAttribute('data-lang')); }); })(opts[o]);
     }
   }
-  if(saved === 'es' || saved === 'en'){ choose(saved); }
-  else { applyLang('es'); }
+  /* el selector se muestra en cada visita; solo se recuerda cuál estaba elegido */
+  if(qp === 'es' || qp === 'en'){ choose(qp); }
+  else {
+    applyLang(saved === 'en' ? 'en' : 'es');
+    if(screenEl){
+      var pre = screenEl.querySelector('.lang-btn[data-lang="' + (saved === 'en' ? 'en' : 'es') + '"]');
+      if(pre) pre.classList.add('is-last');
+    }
+  }
+})();
+
+
+/* ── RENDIMIENTO · animar solo lo que está en pantalla ── */
+(function(){
+  var secs=document.querySelectorAll('#hero,.has-aurora,.sec,.portrait-section');
+  if(!('IntersectionObserver' in window) || !secs.length) return;
+  var io=new IntersectionObserver(function(entries){
+    for(var i=0;i<entries.length;i++){
+      entries[i].target.classList.toggle('is-live', entries[i].isIntersecting);
+    }
+  },{rootMargin:'120px 0px'});
+  for(var i=0;i<secs.length;i++) io.observe(secs[i]);
 })();
 
 /* ── INIT ── */
