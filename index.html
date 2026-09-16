@@ -986,6 +986,18 @@ a[x-apple-data-detectors],.gr-acc-c a,.gr-acc-c a:link,.gr-acc-c a:visited{
 .footer-photo::after{display:none!important}
 .footer-photo-frame{inset:10px!important}
 #footer{padding-top:32px!important}
+
+/* ═══════ abanico: solo la carta del frente es 3D (17 cartas 3D disparaban la memoria en iPhone) ═══════ */
+.fan-card:not(.is-front) .fan-inner{transform-style:flat}
+.fan-card:not(.is-front) .fan-face{display:none}
+.fan-card:not(.is-front) .fan-side{-webkit-backface-visibility:visible;backface-visibility:visible}
+
+/* ═══════ calendario: Google + Apple ═══════ */
+.cal-ttl{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:17px;color:var(--dark);margin:0 0 12px;text-shadow:0 1px 6px rgba(4,9,26,.8)}
+.cal-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.cal-btns .btn-cal{min-height:48px;padding:12px 18px;font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;
+  letter-spacing:.02em;text-transform:none;color:#FFFFFF;background:rgba(10,19,48,.72);border:1.5px solid rgba(244,211,206,.55)}
+.cal-btns .btn-cal svg{width:17px;height:17px}
 </style>
 </head>
 <body>
@@ -1299,10 +1311,17 @@ a[x-apple-data-detectors],.gr-acc-c a,.gr-acc-c a:link,.gr-acc-c a:visited{
     </div>
 
     <div class="cal-row rv" style="margin-top:22px">
-      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mis+XV+A%C3%B1os+%C2%B7+Amelia+Marie+De+la+Rosa&dates=20261114T200000Z/20261115T050000Z&details=Misa+3%3A00+PM+%C2%B7+Our+Lady+of+Solace%2C+731+Morris+Park+Ave%2C+Bronx%0ARecepci%C3%B3n+7%3A00+PM+%C2%B7+Castle+Royale%2C+92+Waverly+St%2C+Yonkers&location=Our+Lady+of+Solace+Roman+Catholic+Church%2C+731+Morris+Park+Ave%2C+Bronx%2C+NY+10462" target="_blank" rel="noopener" class="btn-cal">
+      <p class="cal-ttl" data-en="Add it to your calendar">Guárdalo en tu calendario</p>
+      <div class="cal-btns">
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mis+XV+A%C3%B1os+%C2%B7+Amelia+Marie+De+la+Rosa&dates=20261114T200000Z/20261115T050000Z&details=Misa+3%3A00+PM+%C2%B7+Our+Lady+of+Solace%2C+731+Morris+Park+Ave%2C+Bronx%0ARecepci%C3%B3n+7%3A00+PM+%C2%B7+Castle+Royale%2C+92+Waverly+St%2C+Yonkers&location=Our+Lady+of+Solace+Roman+Catholic+Church%2C+731+Morris+Park+Ave%2C+Bronx%2C+NY+10462" target="_blank" rel="noopener" class="btn-cal" aria-label="Agregar a Google Calendar" data-en-aria="Add to Google Calendar">
         <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5C3.89 4 3 4.9 3 6v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v10zM7 11h5v5H7z"/></svg>
-        <span data-en="Add to Calendar">Guardar en Calendario</span>
+        <span>Google Calendar</span>
       </a>
+      <a href="xv-amelia.ics" class="btn-cal" aria-label="Agregar al calendario de iPhone" data-en-aria="Add to iPhone calendar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.9-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2-1.1 2.8-2.3.9-1.3 1.2-2.5 1.3-2.6-.1 0-2.5-1-2.5-3.8zM14.1 5.9c.6-.8 1.1-1.8 1-2.9-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.5 2.7-1.3z"/></svg>
+        <span data-en="Apple (iPhone)">Apple (iPhone)</span>
+      </a>
+      </div>
     </div>
   </section>
 
@@ -1443,23 +1462,43 @@ a[x-apple-data-detectors],.gr-acc-c a,.gr-acc-c a:link,.gr-acc-c a:visited{
           </div>
         </div>
       </div>
-      <div class="fan-card" data-full="full-3.jpg" data-cap="Retrato de Amelia con el moño de Alicia" data-cap-en="Portrait of Amelia with her Alice bow">
+      <div class="fan-card" data-full="full-13.jpg" data-cap="Amelia sonriendo con su taza de Alicia" data-cap-en="Amelia smiling with her Alice teacup">
         <div class="fan-inner">
           <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
           <div class="fan-side fan-face">
             <span class="fan-corner"><span class="fan-rank">Q</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
-            <div class="fan-photo"><img src="foto3.jpg" alt="Retrato de Amelia con el moño de Alicia" data-en-alt="Portrait of Amelia with her Alice bow" loading="lazy"></div>
+            <div class="fan-photo"><img src="foto13.jpg" alt="Amelia sonriendo con su taza de Alicia" data-en-alt="Amelia smiling with her Alice teacup" loading="lazy"></div>
             <span class="fan-corner br"><span class="fan-rank">Q</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
           </div>
         </div>
       </div>
-      <div class="fan-card is-negra" data-full="full-4.jpg" data-cap="Amelia junto al Conejo Blanco" data-cap-en="Amelia beside the White Rabbit">
+      <div class="fan-card is-negra" data-full="full-3.jpg" data-cap="Retrato de Amelia con el moño de Alicia" data-cap-en="Portrait of Amelia with her Alice bow">
         <div class="fan-inner">
           <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
           <div class="fan-side fan-face">
             <span class="fan-corner"><span class="fan-rank">J</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6S2.4 9.7 2.4 15.3c0 3.1 2.4 4.8 4.6 4.4 1.1-.2 2-.8 2.6-1.6L8.2 22.4h7.6l-1.4-4.3c.6.8 1.5 1.4 2.6 1.6 2.2.4 4.6-1.3 4.6-4.4C21.6 9.7 12 1.6 12 1.6z"/></svg></span>
-            <div class="fan-photo"><img src="foto4.jpg" alt="Amelia junto al Conejo Blanco" data-en-alt="Amelia beside the White Rabbit" loading="lazy"></div>
+            <div class="fan-photo"><img src="foto3.jpg" alt="Retrato de Amelia con el moño de Alicia" data-en-alt="Portrait of Amelia with her Alice bow" loading="lazy"></div>
             <span class="fan-corner br"><span class="fan-rank">J</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6S2.4 9.7 2.4 15.3c0 3.1 2.4 4.8 4.6 4.4 1.1-.2 2-.8 2.6-1.6L8.2 22.4h7.6l-1.4-4.3c.6.8 1.5 1.4 2.6 1.6 2.2.4 4.6-1.3 4.6-4.4C21.6 9.7 12 1.6 12 1.6z"/></svg></span>
+          </div>
+        </div>
+      </div>
+      <div class="fan-card" data-full="full-4.jpg" data-cap="Amelia junto al Conejo Blanco" data-cap-en="Amelia beside the White Rabbit">
+        <div class="fan-inner">
+          <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
+          <div class="fan-side fan-face">
+            <span class="fan-corner"><span class="fan-rank">10</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
+            <div class="fan-photo"><img src="foto4.jpg" alt="Amelia junto al Conejo Blanco" data-en-alt="Amelia beside the White Rabbit" loading="lazy"></div>
+            <span class="fan-corner br"><span class="fan-rank">10</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
+          </div>
+        </div>
+      </div>
+      <div class="fan-card is-negra" data-full="full-14.jpg" data-cap="Amelia tomando el té con el Sombrerero Loco" data-cap-en="Amelia having tea with the Mad Hatter">
+        <div class="fan-inner">
+          <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
+          <div class="fan-side fan-face">
+            <span class="fan-corner"><span class="fan-rank">9</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6S2.4 9.7 2.4 15.3c0 3.1 2.4 4.8 4.6 4.4 1.1-.2 2-.8 2.6-1.6L8.2 22.4h7.6l-1.4-4.3c.6.8 1.5 1.4 2.6 1.6 2.2.4 4.6-1.3 4.6-4.4C21.6 9.7 12 1.6 12 1.6z"/></svg></span>
+            <div class="fan-photo"><img src="foto14.jpg" alt="Amelia tomando el té con el Sombrerero Loco" data-en-alt="Amelia having tea with the Mad Hatter" loading="lazy"></div>
+            <span class="fan-corner br"><span class="fan-rank">9</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6S2.4 9.7 2.4 15.3c0 3.1 2.4 4.8 4.6 4.4 1.1-.2 2-.8 2.6-1.6L8.2 22.4h7.6l-1.4-4.3c.6.8 1.5 1.4 2.6 1.6 2.2.4 4.6-1.3 4.6-4.4C21.6 9.7 12 1.6 12 1.6z"/></svg></span>
           </div>
         </div>
       </div>
@@ -1467,9 +1506,9 @@ a[x-apple-data-detectors],.gr-acc-c a,.gr-acc-c a:link,.gr-acc-c a:visited{
         <div class="fan-inner">
           <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
           <div class="fan-side fan-face">
-            <span class="fan-corner"><span class="fan-rank">10</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
+            <span class="fan-corner"><span class="fan-rank">8</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
             <div class="fan-photo"><img src="foto5.jpg" alt="Amelia bajo las columnas del jardín" data-en-alt="Amelia under the garden columns" loading="lazy"></div>
-            <span class="fan-corner br"><span class="fan-rank">10</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
+            <span class="fan-corner br"><span class="fan-rank">8</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
           </div>
         </div>
       </div>
@@ -1477,29 +1516,49 @@ a[x-apple-data-detectors],.gr-acc-c a,.gr-acc-c a:link,.gr-acc-c a:visited{
         <div class="fan-inner">
           <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
           <div class="fan-side fan-face">
-            <span class="fan-corner"><span class="fan-rank">9</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6S2.4 9.7 2.4 15.3c0 3.1 2.4 4.8 4.6 4.4 1.1-.2 2-.8 2.6-1.6L8.2 22.4h7.6l-1.4-4.3c.6.8 1.5 1.4 2.6 1.6 2.2.4 4.6-1.3 4.6-4.4C21.6 9.7 12 1.6 12 1.6z"/></svg></span>
-            <div class="fan-photo"><img src="foto6.jpg" alt="Amelia con el letrero «It’s always tea time»" data-en-alt="Amelia holding the «It’s always tea time» sign" loading="lazy"></div>
-            <span class="fan-corner br"><span class="fan-rank">9</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6S2.4 9.7 2.4 15.3c0 3.1 2.4 4.8 4.6 4.4 1.1-.2 2-.8 2.6-1.6L8.2 22.4h7.6l-1.4-4.3c.6.8 1.5 1.4 2.6 1.6 2.2.4 4.6-1.3 4.6-4.4C21.6 9.7 12 1.6 12 1.6z"/></svg></span>
-          </div>
-        </div>
-      </div>
-      <div class="fan-card" data-full="full-7.jpg" data-cap="Amelia frente al espejo, junto al lago y el cisne" data-cap-en="Amelia at the mirror, by the lake and the swan">
-        <div class="fan-inner">
-          <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
-          <div class="fan-side fan-face">
-            <span class="fan-corner"><span class="fan-rank">8</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
-            <div class="fan-photo"><img src="foto7.jpg" alt="Amelia frente al espejo, junto al lago y el cisne" data-en-alt="Amelia at the mirror, by the lake and the swan" loading="lazy"></div>
-            <span class="fan-corner br"><span class="fan-rank">8</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
-          </div>
-        </div>
-      </div>
-      <div class="fan-card is-negra" data-full="full-8.jpg" data-cap="Amelia al atardecer junto al río" data-cap-en="Amelia at sunset by the river">
-        <div class="fan-inner">
-          <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
-          <div class="fan-side fan-face">
             <span class="fan-corner"><span class="fan-rank">7</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6S2.4 9.7 2.4 15.3c0 3.1 2.4 4.8 4.6 4.4 1.1-.2 2-.8 2.6-1.6L8.2 22.4h7.6l-1.4-4.3c.6.8 1.5 1.4 2.6 1.6 2.2.4 4.6-1.3 4.6-4.4C21.6 9.7 12 1.6 12 1.6z"/></svg></span>
-            <div class="fan-photo"><img src="foto8.jpg" alt="Amelia al atardecer junto al río" data-en-alt="Amelia at sunset by the river" loading="lazy"></div>
+            <div class="fan-photo"><img src="foto6.jpg" alt="Amelia con el letrero «It’s always tea time»" data-en-alt="Amelia holding the «It’s always tea time» sign" loading="lazy"></div>
             <span class="fan-corner br"><span class="fan-rank">7</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6S2.4 9.7 2.4 15.3c0 3.1 2.4 4.8 4.6 4.4 1.1-.2 2-.8 2.6-1.6L8.2 22.4h7.6l-1.4-4.3c.6.8 1.5 1.4 2.6 1.6 2.2.4 4.6-1.3 4.6-4.4C21.6 9.7 12 1.6 12 1.6z"/></svg></span>
+          </div>
+        </div>
+      </div>
+      <div class="fan-card" data-full="full-15.jpg" data-cap="Amelia junto al Conejo Blanco del cuento" data-cap-en="Amelia with the storybook White Rabbit">
+        <div class="fan-inner">
+          <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
+          <div class="fan-side fan-face">
+            <span class="fan-corner"><span class="fan-rank">6</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
+            <div class="fan-photo"><img src="foto15.jpg" alt="Amelia junto al Conejo Blanco del cuento" data-en-alt="Amelia with the storybook White Rabbit" loading="lazy"></div>
+            <span class="fan-corner br"><span class="fan-rank">6</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
+          </div>
+        </div>
+      </div>
+      <div class="fan-card is-negra" data-full="full-7.jpg" data-cap="Amelia frente al espejo, junto al lago y el cisne" data-cap-en="Amelia at the mirror, by the lake and the swan">
+        <div class="fan-inner">
+          <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
+          <div class="fan-side fan-face">
+            <span class="fan-corner"><span class="fan-rank">5</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6S2.4 9.7 2.4 15.3c0 3.1 2.4 4.8 4.6 4.4 1.1-.2 2-.8 2.6-1.6L8.2 22.4h7.6l-1.4-4.3c.6.8 1.5 1.4 2.6 1.6 2.2.4 4.6-1.3 4.6-4.4C21.6 9.7 12 1.6 12 1.6z"/></svg></span>
+            <div class="fan-photo"><img src="foto7.jpg" alt="Amelia frente al espejo, junto al lago y el cisne" data-en-alt="Amelia at the mirror, by the lake and the swan" loading="lazy"></div>
+            <span class="fan-corner br"><span class="fan-rank">5</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6S2.4 9.7 2.4 15.3c0 3.1 2.4 4.8 4.6 4.4 1.1-.2 2-.8 2.6-1.6L8.2 22.4h7.6l-1.4-4.3c.6.8 1.5 1.4 2.6 1.6 2.2.4 4.6-1.3 4.6-4.4C21.6 9.7 12 1.6 12 1.6z"/></svg></span>
+          </div>
+        </div>
+      </div>
+      <div class="fan-card" data-full="full-8.jpg" data-cap="Amelia al atardecer junto al río" data-cap-en="Amelia at sunset by the river">
+        <div class="fan-inner">
+          <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
+          <div class="fan-side fan-face">
+            <span class="fan-corner"><span class="fan-rank">4</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
+            <div class="fan-photo"><img src="foto8.jpg" alt="Amelia al atardecer junto al río" data-en-alt="Amelia at sunset by the river" loading="lazy"></div>
+            <span class="fan-corner br"><span class="fan-rank">4</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
+          </div>
+        </div>
+      </div>
+      <div class="fan-card is-negra" data-full="full-16.jpg" data-cap="Amelia frente a la mesa de té del País de las Maravillas" data-cap-en="Amelia facing the Wonderland tea table">
+        <div class="fan-inner">
+          <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
+          <div class="fan-side fan-face">
+            <span class="fan-corner"><span class="fan-rank">3</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6S2.4 9.7 2.4 15.3c0 3.1 2.4 4.8 4.6 4.4 1.1-.2 2-.8 2.6-1.6L8.2 22.4h7.6l-1.4-4.3c.6.8 1.5 1.4 2.6 1.6 2.2.4 4.6-1.3 4.6-4.4C21.6 9.7 12 1.6 12 1.6z"/></svg></span>
+            <div class="fan-photo"><img src="foto16.jpg" alt="Amelia frente a la mesa de té del País de las Maravillas" data-en-alt="Amelia facing the Wonderland tea table" loading="lazy"></div>
+            <span class="fan-corner br"><span class="fan-rank">3</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6S2.4 9.7 2.4 15.3c0 3.1 2.4 4.8 4.6 4.4 1.1-.2 2-.8 2.6-1.6L8.2 22.4h7.6l-1.4-4.3c.6.8 1.5 1.4 2.6 1.6 2.2.4 4.6-1.3 4.6-4.4C21.6 9.7 12 1.6 12 1.6z"/></svg></span>
           </div>
         </div>
       </div>
@@ -1507,9 +1566,9 @@ a[x-apple-data-detectors],.gr-acc-c a,.gr-acc-c a:link,.gr-acc-c a:visited{
         <div class="fan-inner">
           <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
           <div class="fan-side fan-face">
-            <span class="fan-corner"><span class="fan-rank">6</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
+            <span class="fan-corner"><span class="fan-rank">2</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
             <div class="fan-photo"><img src="foto10.jpg" alt="Amelia junto a la cascada" data-en-alt="Amelia by the waterfall" loading="lazy"></div>
-            <span class="fan-corner br"><span class="fan-rank">6</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
+            <span class="fan-corner br"><span class="fan-rank">2</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
           </div>
         </div>
       </div>
@@ -1517,19 +1576,39 @@ a[x-apple-data-detectors],.gr-acc-c a,.gr-acc-c a:link,.gr-acc-c a:visited{
         <div class="fan-inner">
           <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
           <div class="fan-side fan-face">
-            <span class="fan-corner"><span class="fan-rank">5</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6S2.4 9.7 2.4 15.3c0 3.1 2.4 4.8 4.6 4.4 1.1-.2 2-.8 2.6-1.6L8.2 22.4h7.6l-1.4-4.3c.6.8 1.5 1.4 2.6 1.6 2.2.4 4.6-1.3 4.6-4.4C21.6 9.7 12 1.6 12 1.6z"/></svg></span>
+            <span class="fan-corner"><span class="fan-rank">A</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6S2.4 9.7 2.4 15.3c0 3.1 2.4 4.8 4.6 4.4 1.1-.2 2-.8 2.6-1.6L8.2 22.4h7.6l-1.4-4.3c.6.8 1.5 1.4 2.6 1.6 2.2.4 4.6-1.3 4.6-4.4C21.6 9.7 12 1.6 12 1.6z"/></svg></span>
             <div class="fan-photo"><img src="foto11.jpg" alt="Amelia con su vestido azul en el jardín" data-en-alt="Amelia in her blue gown in the garden" loading="lazy"></div>
-            <span class="fan-corner br"><span class="fan-rank">5</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6S2.4 9.7 2.4 15.3c0 3.1 2.4 4.8 4.6 4.4 1.1-.2 2-.8 2.6-1.6L8.2 22.4h7.6l-1.4-4.3c.6.8 1.5 1.4 2.6 1.6 2.2.4 4.6-1.3 4.6-4.4C21.6 9.7 12 1.6 12 1.6z"/></svg></span>
+            <span class="fan-corner br"><span class="fan-rank">A</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6S2.4 9.7 2.4 15.3c0 3.1 2.4 4.8 4.6 4.4 1.1-.2 2-.8 2.6-1.6L8.2 22.4h7.6l-1.4-4.3c.6.8 1.5 1.4 2.6 1.6 2.2.4 4.6-1.3 4.6-4.4C21.6 9.7 12 1.6 12 1.6z"/></svg></span>
           </div>
         </div>
       </div>
-      <div class="fan-card" data-full="full-12.jpg" data-cap="Amelia tomando el té de Alicia en el jardín" data-cap-en="Amelia sipping Alice's tea in the garden">
+      <div class="fan-card" data-full="full-17.jpg" data-cap="Espejo dorado con las tazas de Alicia" data-cap-en="Golden mirror with Alice's teacups">
         <div class="fan-inner">
           <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
           <div class="fan-side fan-face">
-            <span class="fan-corner"><span class="fan-rank">4</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
+            <span class="fan-corner"><span class="fan-rank">K</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
+            <div class="fan-photo"><img src="foto17.jpg" alt="Espejo dorado con las tazas de Alicia" data-en-alt="Golden mirror with Alice's teacups" loading="lazy"></div>
+            <span class="fan-corner br"><span class="fan-rank">K</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
+          </div>
+        </div>
+      </div>
+      <div class="fan-card is-negra" data-full="full-12.jpg" data-cap="Amelia tomando el té de Alicia en el jardín" data-cap-en="Amelia sipping Alice's tea in the garden">
+        <div class="fan-inner">
+          <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
+          <div class="fan-side fan-face">
+            <span class="fan-corner"><span class="fan-rank">Q</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6S2.4 9.7 2.4 15.3c0 3.1 2.4 4.8 4.6 4.4 1.1-.2 2-.8 2.6-1.6L8.2 22.4h7.6l-1.4-4.3c.6.8 1.5 1.4 2.6 1.6 2.2.4 4.6-1.3 4.6-4.4C21.6 9.7 12 1.6 12 1.6z"/></svg></span>
             <div class="fan-photo"><img src="foto12.jpg" alt="Amelia tomando el té de Alicia en el jardín" data-en-alt="Amelia sipping Alice's tea in the garden" loading="lazy"></div>
-            <span class="fan-corner br"><span class="fan-rank">4</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
+            <span class="fan-corner br"><span class="fan-rank">Q</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6S2.4 9.7 2.4 15.3c0 3.1 2.4 4.8 4.6 4.4 1.1-.2 2-.8 2.6-1.6L8.2 22.4h7.6l-1.4-4.3c.6.8 1.5 1.4 2.6 1.6 2.2.4 4.6-1.3 4.6-4.4C21.6 9.7 12 1.6 12 1.6z"/></svg></span>
+          </div>
+        </div>
+      </div>
+      <div class="fan-card" data-full="full-18.jpg" data-cap="Collar y aretes de Alicia en el País de las Maravillas" data-cap-en="Alice in Wonderland necklace and earrings">
+        <div class="fan-inner">
+          <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
+          <div class="fan-side fan-face">
+            <span class="fan-corner"><span class="fan-rank">J</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
+            <div class="fan-photo"><img src="foto18.jpg" alt="Collar y aretes de Alicia en el País de las Maravillas" data-en-alt="Alice in Wonderland necklace and earrings" loading="lazy"></div>
+            <span class="fan-corner br"><span class="fan-rank">J</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
           </div>
         </div>
       </div>

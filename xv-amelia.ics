@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Elysium Invitaciones//XV Amelia//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:XV Amelia Marie De la Rosa
+BEGIN:VEVENT
+UID:xv-amelia-misa-20261114@elysium
+DTSTAMP:20260917T000000Z
+DTSTART:20261114T200000Z
+DTEND:20261114T210000Z
+SUMMARY:Misa · XV Años de Amelia Marie
+LOCATION:Our Lady of Solace Roman Catholic Church\, 731 Morris Park Ave\, Bronx\, NY 10462
+DESCRIPTION:Misa de XV años de Amelia Marie De la Rosa.\nhttps://xv-amelia-marie-de-la-rosa.vercel.app
+URL:https://xv-amelia-marie-de-la-rosa.vercel.app
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Mañana: XV años de Amelia
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:xv-amelia-recepcion-20261114@elysium
+DTSTAMP:20260917T000000Z
+DTSTART:20261114T233000Z
+DTEND:20261115T050000Z
+SUMMARY:Recepción · XV Años de Amelia Marie
+LOCATION:Castle Royale\, 92 Waverly St\, Yonkers\, NY 10701
+DESCRIPTION:Recepción 6:30 p.m. · Cocktail hour 7:00 p.m. · Grand entrance 8:00 p.m.\nhttps://xv-amelia-marie-de-la-rosa.vercel.app
+URL:https://xv-amelia-marie-de-la-rosa.vercel.app
+BEGIN:VALARM
+TRIGGER:-PT2H
+ACTION:DISPLAY
+DESCRIPTION:Recepción de los XV de Amelia en 2 horas
+END:VALARM
+END:VEVENT
+END:VCALENDAR
