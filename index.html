@@ -998,6 +998,20 @@ a[x-apple-data-detectors],.gr-acc-c a,.gr-acc-c a:link,.gr-acc-c a:visited{
 .cal-btns .btn-cal{min-height:48px;padding:12px 18px;font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;
   letter-spacing:.02em;text-transform:none;color:#FFFFFF;background:rgba(10,19,48,.72);border:1.5px solid rgba(244,211,206,.55)}
 .cal-btns .btn-cal svg{width:17px;height:17px}
+
+/* ═══════ buenos deseos · canción en Spotify ═══════ */
+.wish-divider{display:flex;align-items:center;gap:12px;margin:26px 0 4px;color:#8E4E5A}
+.wish-divider span{flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(142,78,90,.55),transparent)}
+.wish-divider svg{width:20px;height:20px}
+.wish-song-ttl{justify-content:center;margin:10px 0 6px}
+.wish-song-txt{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:500;line-height:1.55;color:#4A2A33;text-align:center;margin:0 0 14px}
+.wish-spotify{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;min-height:58px;padding:14px 18px;
+  border-radius:50px;text-decoration:none;background:#121212;color:#FFFFFF;
+  font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;letter-spacing:.02em;
+  box-shadow:0 10px 24px rgba(0,0,0,.35),inset 0 0 0 1.5px rgba(30,215,96,.55);transition:transform .25s,box-shadow .25s}
+.wish-spotify:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(0,0,0,.4),inset 0 0 0 1.5px #1ED760}
+.wish-spotify-logo{width:26px;height:26px;flex-shrink:0;fill:#1ED760}
+.wish-song-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:15px;color:#6E3844;text-align:center;margin-top:10px}
 </style>
 </head>
 <body>
@@ -1853,7 +1867,7 @@ a[x-apple-data-detectors],.gr-acc-c a,.gr-acc-c a:link,.gr-acc-c a:visited{
       <span class="wish-corners" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
       <span class="wish-tag" aria-hidden="true" data-en="Drink me">Bébeme</span>
 
-      <p class="wish-intro" data-en="Leave Amelia a few words and suggest the song you want to dance to that night. Everything reaches her straight on WhatsApp.">Déjale unas palabras a Amelia y sugiérele la canción que quieres bailar esa noche. Todo le llega directo por WhatsApp.</p>
+      <p class="wish-intro" data-en="Leave Amelia a few words on WhatsApp, and add the song you want to dance to straight into the party playlist on Spotify.">Déjale unas palabras a Amelia por WhatsApp y agrega tú mismo la canción que quieres bailar a la playlist de la fiesta en Spotify.</p>
 
       <label class="wish-lbl" for="wishName" data-en="Your name">Tu nombre</label>
       <input class="wish-input" id="wishName" name="wishName" type="text" maxlength="60" autocomplete="name" placeholder="Escribe tu nombre" data-en-ph="Type your name">
@@ -1861,17 +1875,22 @@ a[x-apple-data-detectors],.gr-acc-c a,.gr-acc-c a:link,.gr-acc-c a:visited{
       <label class="wish-lbl" for="wishMsg" data-en="Your message of good wishes">Tu mensaje de buenos deseos</label>
       <textarea class="wish-input wish-area" id="wishMsg" name="wishMsg" rows="4" maxlength="500" placeholder="Amelia, te deseo…" data-en-ph="Amelia, I wish you…"></textarea>
 
-      <label class="wish-lbl" for="wishSong">
-        <svg class="wish-note" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 18.5A2.5 2.5 0 1 1 6.5 16c.6 0 1.1.2 1.5.5V4l11-2v12.5A2.5 2.5 0 1 1 16.5 12c.6 0 1.1.2 1.5.5V6.2L9 7.9v10.6z"/></svg>
-        Canción que sugieres
-      </label>
-      <input class="wish-input" id="wishSong" name="wishSong" type="text" maxlength="120" placeholder="Nombre de la canción y el artista" data-en-ph="Song name and artist">
+
 
       <button class="wish-btn" id="wishBtn" type="submit">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.7 14.1c-.2.7-1.2 1.3-1.9 1.4-.5.1-1.2.2-3.5-.7-2.9-1.2-4.8-4.2-5-4.4-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.5c-.1.2-.3.3-.1.6.5.9 1.1 1.6 1.9 2.2.5.4.9.6 1.2.7.2.1.4.1.6-.1l.7-.8c.2-.2.3-.2.6-.1l2 .9c.2.1.4.2.4.4.1.2.1.9-.3 1.8z"/></svg>
         <span data-en="Send my good wishes">Enviar mis buenos deseos</span>
       </button>
       <p class="wish-feedback" id="wishFeedback" role="status" aria-live="polite"></p>
+
+      <div class="wish-divider" aria-hidden="true"><span></span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18.5A2.5 2.5 0 1 1 6.5 16c.6 0 1.1.2 1.5.5V4l11-2v12.5A2.5 2.5 0 1 1 16.5 12c.6 0 1.1.2 1.5.5V6.2L9 7.9v10.6z"/></svg><span></span></div>
+      <p class="wish-lbl wish-song-ttl" data-en="Your song for the party">Tu canción para la fiesta</p>
+      <p class="wish-song-txt" data-en="Open the playlist and add the song you want to hear that night.">Abre la playlist y agrega la canción que quieres escuchar esa noche.</p>
+      <a class="wish-spotify" href="https://open.spotify.com/playlist/3t36nTfzw1fcbOTSTlrHFN?si=JgMRIUAOR9yOQgYZerCwXg&amp;pt=a176f7b1aa921fae3188c6a349e3a444&amp;pi=HoXShb6-SimQv" target="_blank" rel="noopener" aria-label="Agregar mi canción a la playlist de Spotify (se abre en una pestaña nueva)" data-en-aria="Add my song to the Spotify playlist (opens in a new tab)">
+        <svg class="wish-spotify-logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+        <span data-en="Add my song on Spotify">Agregar mi canción en Spotify</span>
+      </a>
+      <p class="wish-song-note" data-en="You need a Spotify account (free works).">Necesitas una cuenta de Spotify (sirve la gratuita).</p>
     </form>
   </section>
 
@@ -2996,7 +3015,7 @@ function initMain(){
   var form=document.getElementById('wishForm'); if(!form) return;
   var WA='19296225734';
   var nameEl=document.getElementById('wishName'), msgEl=document.getElementById('wishMsg'),
-      songEl=document.getElementById('wishSong'), fb=document.getElementById('wishFeedback');
+      fb=document.getElementById('wishFeedback');
   try{
     var qp=new URLSearchParams(window.location.search);
     var para=(qp.get('para')||'').trim();
@@ -3004,17 +3023,16 @@ function initMain(){
   }catch(e){}
   form.addEventListener('submit', function(e){
     e.preventDefault();
-    var nombre=(nameEl.value||'').trim(), msg=(msgEl.value||'').trim(), song=(songEl.value||'').trim();
+    var nombre=(nameEl.value||'').trim(), msg=(msgEl.value||'').trim();
     var EN=document.documentElement.lang==='en';
-    if(!msg && !song){
-      fb.textContent = EN ? 'Write a message or suggest a song first.' : 'Escribe un mensaje o sugiere una canción.';
-      (msg?songEl:msgEl).focus();
+    if(!msg){
+      fb.textContent = EN ? 'Write your message first.' : 'Escribe tu mensaje primero.';
+      msgEl.focus();
       return;
     }
     var t = EN ? 'Hi Amelia! ' : '¡Hola, Amelia! ';
     if(nombre) t += (EN?'This is ':'Soy ') + nombre + '. ';
     if(msg) t += (EN?'\n\nMy wishes for you: ':'\n\nMis buenos deseos: ') + msg;
-    if(song) t += (EN?'\n\nSong I would love to dance: ':'\n\nLa canción que quiero bailar: ') + song;
     window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t), '_blank', 'noopener');
     fb.textContent = EN ? 'Opening WhatsApp — press send and it reaches Amelia.'
                         : 'Abriendo WhatsApp — solo presiona enviar y le llega a Amelia.';
