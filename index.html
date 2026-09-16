@@ -915,10 +915,21 @@ body.lb-locked{overflow:hidden}
 .au-base{width:100%!important;animation:none!important;transform:none!important}
 .aurora i{will-change:auto!important}
 .au-b3,.au-b4{display:none!important}
-/* sin animación = sin capa compuesta; solo la sección visible anima */
-.au-b1,.au-b2{animation:none!important}
-.is-live .au-b1{animation:auB1 17s ease-in-out infinite!important}
-.is-live .au-b2{animation:auB2 21s ease-in-out infinite!important}
+/* manchas de luz como fondo (repintado, sin capas compuestas que disparan la memoria en iOS) */
+.aurora i{display:none!important}
+.aurora{background:
+    radial-gradient(closest-side,rgba(147,227,253,.95) 0%,rgba(147,227,253,.5) 45%,rgba(147,227,253,0) 100%),
+    radial-gradient(closest-side,rgba(147,227,253,.85) 0%,rgba(74,123,183,.45) 50%,rgba(74,123,183,0) 100%),
+    radial-gradient(closest-side,rgba(244,164,192,.42) 0%,rgba(183,110,121,.18) 50%,rgba(183,110,121,0) 100%),
+    linear-gradient(100deg,#12306E 0%,#1E3A8A 26%,#3A9CC8 50%,#1E3A8A 74%,#12306E 100%)!important;
+  background-repeat:no-repeat!important;
+  background-size:120% 70%,130% 75%,110% 60%,100% 100%!important;
+  background-position:-30% -10%,130% 110%,120% 45%,0 0!important}
+.is-live > .aurora{animation:auDrift 22s ease-in-out infinite alternate!important}
+@keyframes auDrift{
+  0%  {background-position:-30% -10%,130% 110%,120% 45%,0 0}
+  50% {background-position:10% 25%,90% 70%,-20% 70%,0 0}
+  100%{background-position:-40% 60%,120% 20%,80% 5%,0 0}}
 .sec-bg,.portrait-section::after{will-change:auto!important;animation:none!important}
 .sec.is-live > .sec-bg{animation:kenBurns 24s ease-in-out infinite!important}
 .sec.is-live > .sec-bg[style*="fondo-gracia"]{animation-duration:22s!important;animation-delay:-4s!important}
