@@ -960,6 +960,32 @@ a[x-apple-data-detectors],.gr-acc-c a,.gr-acc-c a:link,.gr-acc-c a:visited{
 
 /* ═══════ visor: la foto se ve completa, con su proporción original ═══════ */
 .lb-fig img{width:auto;height:auto;max-width:100%;max-height:76vh;object-fit:contain}
+
+/* ═══════ clima: botón al pronóstico ═══════ */
+.wx-btn{display:flex;align-items:center;justify-content:center;gap:11px;max-width:320px;margin:24px auto 0;min-height:58px;
+  padding:15px 24px;border-radius:50px;text-decoration:none;color:#0A1330;
+  background:linear-gradient(135deg,#C9F2FF 0%,#93E3FD 45%,#5FB6DE 100%);
+  font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;letter-spacing:.04em;
+  box-shadow:0 10px 26px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.6);transition:transform .25s,filter .25s}
+.wx-btn:hover{transform:translateY(-2px);filter:brightness(1.05)}
+.wx-btn svg{width:22px;height:22px;flex-shrink:0}
+
+/* ═══════ botón de la misa: texto grueso y legible ═══════ */
+.btn-misa{font-family:'Cormorant Garamond',serif!important;font-size:18px!important;font-weight:700!important;
+  letter-spacing:.02em!important;text-transform:none!important;padding-left:20px!important;color:#081230!important;line-height:1.25;
+  background:linear-gradient(135deg,#FBE3DF 0%,#E7AEB5 50%,#C98A93 100%)!important}
+.btn-misa svg{width:22px!important;height:22px!important}
+.btn-misa{width:calc(100% + 40px);margin:14px -20px 0!important;white-space:normal;text-align:left;font-size:17.5px!important;padding:13px 22px!important;border-radius:40px!important;gap:12px!important}
+.btn-misa span{flex:0 1 auto}
+#lang-toggle{transition:opacity .3s,transform .3s}
+#lang-toggle.is-hid{opacity:0;transform:translateY(-14px);pointer-events:none}
+
+/* ═══════ footer: la foto completa, sin recorte ═══════ */
+.footer-photo{height:auto!important;margin:0 0 26px!important;border-radius:6px}
+.footer-photo img{width:100%!important;height:auto!important;object-fit:contain!important;transform:none!important}
+.footer-photo::after{display:none!important}
+.footer-photo-frame{inset:10px!important}
+#footer{padding-top:32px!important}
 </style>
 </head>
 <body>
@@ -1383,11 +1409,10 @@ a[x-apple-data-detectors],.gr-acc-c a,.gr-acc-c a:link,.gr-acc-c a:visited{
       </div>
     </div>
 
-    <p class="wx-tip rv">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0-3.5 10.9c.5.4.8 1 .8 1.6v.5h5.4v-.5c0-.6.3-1.2.8-1.6A6 6 0 0 0 12 3z"/><path d="M10 20h4"/></svg>
-      <span data-en="Mid-November in New York is chilly, and the night gets truly cold. We suggest an elegant coat — magic keeps you warm too.">Mediados de noviembre en Nueva York es fresco y de noche refresca de verdad. Te sugerimos un abrigo elegante — la magia también abriga.</span>
-    </p>
-    <p class="wx-src rv" data-en="Historical average for the Bronx and Yonkers in mid-November.">Promedio histórico para el Bronx y Yonkers a mediados de noviembre.</p>
+    <a class="wx-btn rv" href="https://www.google.com/search?q=clima+Bronx+NY+14+de+noviembre+2026&amp;hl=es" data-en-href="https://www.google.com/search?q=Bronx+NY+weather+November+14+2026&amp;hl=en" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19H8a5 5 0 1 1 .9-9.9A6 6 0 0 1 20 12.5a3.3 3.3 0 0 1-2.5 6.5z"/></svg>
+      <span data-en="Check the weather for the day">Consultar el clima del día</span>
+    </a>
   </section>
 
   <!-- NUESTRA HISTORIA -->
@@ -1495,6 +1520,16 @@ a[x-apple-data-detectors],.gr-acc-c a,.gr-acc-c a:link,.gr-acc-c a:visited{
             <span class="fan-corner"><span class="fan-rank">5</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6S2.4 9.7 2.4 15.3c0 3.1 2.4 4.8 4.6 4.4 1.1-.2 2-.8 2.6-1.6L8.2 22.4h7.6l-1.4-4.3c.6.8 1.5 1.4 2.6 1.6 2.2.4 4.6-1.3 4.6-4.4C21.6 9.7 12 1.6 12 1.6z"/></svg></span>
             <div class="fan-photo"><img src="foto11.jpg" alt="Amelia con su vestido azul en el jardín" data-en-alt="Amelia in her blue gown in the garden" loading="lazy"></div>
             <span class="fan-corner br"><span class="fan-rank">5</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6S2.4 9.7 2.4 15.3c0 3.1 2.4 4.8 4.6 4.4 1.1-.2 2-.8 2.6-1.6L8.2 22.4h7.6l-1.4-4.3c.6.8 1.5 1.4 2.6 1.6 2.2.4 4.6-1.3 4.6-4.4C21.6 9.7 12 1.6 12 1.6z"/></svg></span>
+          </div>
+        </div>
+      </div>
+      <div class="fan-card" data-full="full-12.jpg" data-cap="Amelia tomando el té de Alicia en el jardín" data-cap-en="Amelia sipping Alice's tea in the garden">
+        <div class="fan-inner">
+          <div class="fan-side fan-back"><svg class="fan-back-mono" viewBox="0 0 74 74" fill="none" aria-hidden="true"><circle cx="37" cy="37" r="33" stroke="#F4D3CE" stroke-width="1.4" opacity=".85"/><circle cx="37" cy="37" r="27" stroke="#F4D3CE" stroke-width=".9" opacity=".5"/><path d="M37 52.5C29 45 22.4 39.2 22.4 33.6c0-4.4 3.6-6.2 6.4-6.2 1.8 0 5.4.7 8.2 5.9 2.7-5.2 6.4-5.9 8.2-5.9 3.3 0 6.4 2 6.4 6.2 0 5.6-6.6 11.4-14.6 18.9z" fill="#F4D3CE" opacity=".9"/><text x="37" y="42" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#B76E79">A</text></svg></div>
+          <div class="fan-side fan-face">
+            <span class="fan-corner"><span class="fan-rank">4</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
+            <div class="fan-photo"><img src="foto12.jpg" alt="Amelia tomando el té de Alicia en el jardín" data-en-alt="Amelia sipping Alice's tea in the garden" loading="lazy"></div>
+            <span class="fan-corner br"><span class="fan-rank">4</span><svg class="fan-suit" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.6C6.4 16.1 1 11.3 1 7.2 1 3.4 4.1 2 6.3 2c1.3 0 4.2.5 5.7 4.5C13.6 2.5 16.5 2 17.7 2 20.3 2 23 3.6 23 7.2c0 4.1-5.1 8.6-11 14.4z"/></svg></span>
           </div>
         </div>
       </div>
@@ -2823,8 +2858,8 @@ function initMain(){
   if(!fig||!im||typeof gsap==='undefined') return;
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(reduce) return;
-  gsap.fromTo(im,{yPercent:-7},{yPercent:7,ease:'none',
-    scrollTrigger:{trigger:fig,start:'top bottom',end:'bottom top',scrub:.6}});
+  gsap.fromTo(im,{scale:1.06,opacity:.6},{scale:1,opacity:1,duration:1.6,ease:'power2.out',
+    scrollTrigger:{trigger:fig,start:'top 85%',once:true}});
 })();
 
 /* ── A11Y · sobre operable con teclado + etiquetas del RSVP ── */
@@ -2938,6 +2973,21 @@ window.T = function(es, en){ return document.documentElement.lang === 'en' ? en 
   }
 })();
 
+
+/* ── interruptor de idioma: se esconde al bajar, vuelve al subir ── */
+(function(){
+  var t=document.getElementById('lang-toggle'); if(!t) return;
+  var last=window.pageYOffset||0, ticking=false;
+  window.addEventListener('scroll', function(){
+    if(ticking) return; ticking=true;
+    requestAnimationFrame(function(){
+      var y=window.pageYOffset||0;
+      t.classList.toggle('is-hid', y>160 && y>last+4);
+      if(y<last-4 || y<=160) t.classList.remove('is-hid');
+      last=y; ticking=false;
+    });
+  }, {passive:true});
+})();
 
 /* ── RENDIMIENTO · animar solo lo que está en pantalla ── */
 (function(){
