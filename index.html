@@ -1012,6 +1012,80 @@ a[x-apple-data-detectors],.gr-acc-c a,.gr-acc-c a:link,.gr-acc-c a:visited{
 .wish-spotify:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(0,0,0,.4),inset 0 0 0 1.5px #1ED760}
 .wish-spotify-logo{width:26px;height:26px;flex-shrink:0;fill:#1ED760}
 .wish-song-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:15px;color:#6E3844;text-align:center;margin-top:10px}
+
+/* ═══════════════ TODO LO PULSABLE SE NOTA ═══════════════ */
+/* 1 · tipografía gruesa en cada botón (Italiana se veía delgada) */
+.btn-map,.btn-cal,.btn-album,.gift-btn,.rsvp-btn,.rsvp-toggle-btn,.rsvp-editar-btn,
+.giftbox-cta,.env-tap-hint,.env-tap,.gr-hint,.lang-opt,.btn-copy,.gal-hint{
+  font-family:'Cormorant Garamond',serif!important;font-weight:700!important;text-transform:none!important}
+.btn-map,.btn-cal,.btn-album,.gift-btn{font-size:17px!important;letter-spacing:.02em!important;min-height:54px}
+.btn-map{padding:15px 26px!important}
+.rsvp-btn{font-size:18px!important;letter-spacing:.02em!important;padding-left:30px!important}
+.rsvp-toggle-btn{font-size:17px!important;letter-spacing:.01em!important;padding:15px 8px!important;min-height:54px}
+.rsvp-editar-btn{font-size:16.5px!important;letter-spacing:.01em!important;min-height:50px}
+.giftbox-cta,.env-tap-hint,.gr-hint,.gal-hint{font-size:17px!important;letter-spacing:.02em!important;padding-left:0!important}
+.env-tap{font-size:17px!important;letter-spacing:.06em!important;font-weight:700!important}
+.lang-opt{font-size:15px!important;letter-spacing:.06em!important}
+.btn-cal svg,.btn-album svg,.btn-map svg{width:19px!important;height:19px!important}
+
+/* 2 · halo que sale del botón + latido */
+@keyframes tapRing{0%{transform:scale(.97);opacity:.9}65%{transform:scale(1.13);opacity:0}100%{transform:scale(1.13);opacity:0}}
+@keyframes tapBeat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+.btn-map,.btn-misa,.btn-cal,.wx-btn,.btn-album,.wish-btn,.wish-spotify,.rsvp-btn,.rsvp-editar-btn,
+.lang-btn,.gr-acc-btn,.gr-arrow,.lb-nav,.lb-close,.gift-close,#giftbox,#envGift,.fan-card.is-front,.clock-btn{
+  position:relative}
+.btn-map::after,.btn-misa::after,.btn-cal::after,.wx-btn::after,.btn-album::after,.wish-btn::after,
+.wish-spotify::after,.rsvp-btn::after,.rsvp-editar-btn::after,.lang-btn::after,.gr-acc-btn::after,
+.gr-arrow::after,.lb-nav::after,.lb-close::after,.gift-close::after,.fan-card.is-front::after{
+  content:'';position:absolute;inset:-7px;border-radius:inherit;pointer-events:none;
+  border:2.5px solid rgba(147,227,253,.85);opacity:0}
+.gr-acc-btn::after,.gr-arrow::after,.lb-nav::after,.lb-close::after,.gift-close::after{border-radius:50%;inset:-6px;border-width:2px}
+.fan-card.is-front::after{inset:-10px;border-radius:16px;border-color:rgba(244,211,206,.9)}
+.btn-misa::after,.wish-btn::after,.rsvp-btn::after{border-color:rgba(244,211,206,.9)}
+.wish-spotify::after{border-color:rgba(30,215,96,.85)}
+
+.is-live .btn-map::after,.is-live .btn-misa::after,.is-live .btn-cal::after,.is-live .wx-btn::after,
+.is-live .btn-album::after,.is-live .wish-btn::after,.is-live .wish-spotify::after,.is-live .rsvp-btn::after,
+.is-live .rsvp-editar-btn::after,.is-live .fan-card.is-front::after,
+.lang-btn::after,.gift-backdrop.is-open .gr-acc-btn::after,.gift-backdrop.is-open .gr-arrow::after,
+.lb.is-open .lb-nav::after,.lb.is-open .lb-close::after,.gift-backdrop.is-open .gift-close::after{
+  animation:tapRing 2.4s ease-out infinite}
+.is-live .btn-misa,.is-live .wx-btn,.is-live .wish-btn,.is-live .wish-spotify,.is-live .rsvp-btn{
+  animation:tapBeat 2.4s ease-in-out infinite}
+
+/* el sombrero y el sobre: halo redondo debajo, como si algo empujara hacia arriba */
+#giftbox::after,#envGift::after{content:'';position:absolute;left:50%;bottom:2%;width:74%;aspect-ratio:1;
+  transform:translateX(-50%);border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,rgba(147,227,253,.34) 0%,rgba(147,227,253,.12) 45%,rgba(147,227,253,0) 70%);opacity:0}
+.is-live #giftbox::after,.is-live #envGift::after{animation:tapGlow 2.6s ease-in-out infinite}
+@keyframes tapGlow{0%,100%{opacity:.25;transform:translateX(-50%) scale(.9)}50%{opacity:.9;transform:translateX(-50%) scale(1.12)}}
+.is-live #giftbox,.is-live #envGift{animation:tapBeat 2.6s ease-in-out infinite}
+
+/* 3 · dedito que toca, en los avisos de "toca aquí" */
+.giftbox-cta::before,.env-tap-hint::before,.gal-hint::before,.env-tap::before{
+  content:'';display:inline-block;width:20px;height:20px;margin-right:9px;vertical-align:-4px;
+  background:currentColor;-webkit-mask:var(--tap-hand) center/contain no-repeat;mask:var(--tap-hand) center/contain no-repeat;
+  animation:tapHand 1.9s ease-in-out infinite}
+:root{--tap-hand:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 11.5V5.8a1.8 1.8 0 0 1 3.6 0v5.1h.9V8.4a1.6 1.6 0 0 1 3.2 0v2.6h.9V9.6a1.5 1.5 0 0 1 3 0v6.1c0 3.2-2.2 5.6-5.6 5.6h-1.6c-2 0-3.3-.7-4.4-2.2l-3-4.2a1.7 1.7 0 0 1 2.5-2.2l1.5 1.4z'/%3E%3C/svg%3E")}
+@keyframes tapHand{0%,100%{transform:translateY(0) rotate(0)}45%{transform:translateY(4px) rotate(-8deg)}}
+.env-tap::before{width:22px;height:22px}
+
+/* 4 · al presionar, el botón responde */
+.btn-map:active,.btn-misa:active,.btn-cal:active,.wx-btn:active,.btn-album:active,.wish-btn:active,
+.wish-spotify:active,.rsvp-btn:active,.rsvp-toggle-btn:active,.rsvp-editar-btn:active,.lang-btn:active,
+.gr-acc-btn:active,.gr-arrow:active,.lb-nav:active,.lb-close:active,.gift-close:active,#giftbox:active,
+#envGift:active,.fan-card:active,.clock-btn:active,.lang-opt:active{transform:scale(.96);filter:brightness(1.08)}
+.rsvp-btn{overflow:visible}
+
+@media(prefers-reduced-motion:reduce){
+  .btn-map::after,.btn-misa::after,.btn-cal::after,.wx-btn::after,.btn-album::after,.wish-btn::after,
+  .wish-spotify::after,.rsvp-btn::after,.rsvp-editar-btn::after,.lang-btn::after,.gr-acc-btn::after,
+  .gr-arrow::after,.lb-nav::after,.lb-close::after,.gift-close::after,.fan-card.is-front::after,
+  #giftbox::after,#envGift::after{animation:none!important;opacity:.5}
+  .giftbox-cta::before,.env-tap-hint::before,.gal-hint::before,.env-tap::before{animation:none!important}
+  .is-live .btn-misa,.is-live .wx-btn,.is-live .wish-btn,.is-live .wish-spotify,.is-live .rsvp-btn,
+  .is-live #giftbox,.is-live #envGift,.lang-btn{animation:none!important}
+}
 </style>
 </head>
 <body>
