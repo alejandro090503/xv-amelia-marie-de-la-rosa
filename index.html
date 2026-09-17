@@ -1086,6 +1086,20 @@ a[x-apple-data-detectors],.gr-acc-c a,.gr-acc-c a:link,.gr-acc-c a:visited{
   .is-live .btn-misa,.is-live .wx-btn,.is-live .wish-btn,.is-live .wish-spotify,.is-live .rsvp-btn,
   .is-live #giftbox,.is-live #envGift,.lang-btn{animation:none!important}
 }
+
+/* ═══════ el número de pases se lee de lejos ═══════ */
+.rsvp-note-num{font-family:'Cormorant Garamond',serif;font-size:1.75em;font-weight:700;font-style:normal;
+  color:#FFFFFF;line-height:1;padding:0 2px;vertical-align:-2px}
+.rsvp-pases-num{font-family:'Cormorant Garamond',serif!important;font-weight:700!important;
+  font-size:clamp(46px,13vw,60px)!important;color:#FFFFFF!important;line-height:1!important;
+  text-shadow:0 2px 12px rgba(4,9,26,.6)}
+.rsvp-pases-label{font-size:13.5px!important;color:#F7DCD7!important}
+
+/* ═══════ el nombre del selector de idioma, en letra normal ═══════ */
+.lang-ttl{font-family:'Cormorant Garamond',serif!important;font-weight:700!important;font-size:30px!important;
+  letter-spacing:.01em!important;line-height:1.3!important;color:#FFFFFF!important}
+.lang-sub{font-family:'Cormorant Garamond',serif!important;font-weight:700!important;font-size:16px!important;
+  letter-spacing:.16em!important;color:#F7DCD7!important}
 </style>
 </head>
 <body>
@@ -2812,8 +2826,10 @@ function initMain(){
     if(urlPara){
       if(dispEl) dispEl.style.display = 'flex';
       if(noteEl){
-        noteEl.textContent = T(urlPara + ', tienes ' + pasesAsignados + (pasesAsignados===1 ? ' pase reservado' : ' pases reservados') + ' para mi celebración.',
-                              urlPara + ', you have ' + pasesAsignados + (pasesAsignados===1 ? ' seat reserved' : ' seats reserved') + ' for my celebration.');
+        var esc = String(urlPara).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        var num = '<strong class="rsvp-note-num">' + pasesAsignados + '</strong>';
+        noteEl.innerHTML = T(esc + ', tienes ' + num + (pasesAsignados===1 ? ' pase reservado' : ' pases reservados') + ' para mi celebración.',
+                             esc + ', you have ' + num + (pasesAsignados===1 ? ' seat reserved' : ' seats reserved') + ' for my celebration.');
         noteEl.style.display = 'block';
       }
     }
