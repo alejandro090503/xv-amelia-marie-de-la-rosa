@@ -2061,7 +2061,7 @@ a[x-apple-data-detectors],.gr-acc-c a,.gr-acc-c a:link,.gr-acc-c a:visited{
 
         <span class="eyebrow" data-en="Confirm Your Attendance">Confirma tu Asistencia</span>
         <h2 class="rsvp-title" data-en="Your presence <em>means everything</em>">Tu presencia <em>lo es todo</em></h2>
-        <p class="rsvp-text" data-en="Please confirm before <strong>October 25, 2026</strong>. It would make me so happy to know you will be there.">Por favor confírmame tu asistencia antes del <strong>25 de octubre de 2026</strong>. Me hará muy feliz saber que estarás ahí.</p>
+        <p class="rsvp-text" data-en="Please confirm before <strong>November 2, 2026</strong>. It would make me so happy to know you will be there.">Por favor confírmame tu asistencia antes del <strong>2 de noviembre de 2026</strong>. Me hará muy feliz saber que estarás ahí.</p>
 
         <div class="rsvp-divider">
           <svg class="rsvp-divider-heart" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
@@ -2093,7 +2093,7 @@ a[x-apple-data-detectors],.gr-acc-c a,.gr-acc-c a:link,.gr-acc-c a:visited{
           <p class="rsvp-feedback" id="rsvp-feedback"></p>
           <div class="rsvp-deadline-chip">
             <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5z"/></svg>
-            <span data-en="<span class=&quot;rsvp-deadline-lbl&quot;>RSVP by</span><strong>October 25, 2026</strong>"><span class="rsvp-deadline-lbl">Fecha límite</span><strong>25 de octubre de 2026</strong></span>
+            <span data-en="<span class=&quot;rsvp-deadline-lbl&quot;>RSVP by</span><strong>November 2, 2026</strong>"><span class="rsvp-deadline-lbl">Fecha límite</span><strong>2 de noviembre de 2026</strong></span>
           </div>
         </div>
 
@@ -2779,7 +2779,7 @@ function initMain(){
 (function initRsvp(){
   var PANEL_API = 'https://panel-invitados.vercel.app/api/confirmar';
   var RSVP_URL  = 'https://xv-amelia-marie-de-la-rosa.vercel.app';
-  var DEADLINE  = new Date(2026, 9, 25, 23, 59, 59, 999); /* 25 oct 2026 */
+  var DEADLINE  = new Date(2026, 10, 2, 23, 59, 59, 999); /* 2 nov 2026 */
   var frozen    = Date.now() > DEADLINE.getTime();
 
   function decodeInvite(tok){
